@@ -4,6 +4,7 @@ import basicLoginSchema from '../schemas/loginSchema';
 import axios from 'axios';
 import AppContext from '../AppContext';
 import { useNavigate } from 'react-router-dom';
+import { baseURL } from '../helpers/config';
 import '../App.css';
 const inputs = ["username", "password"]
 const initalializers =  {
@@ -24,14 +25,14 @@ function LoginForm(){
         } else {
             setFailedValidation(false)
             let loggedIn = await axios.post(
-                'http://localhost:3001/auth/token'
+                `${baseURL}auth/token`
                 ,  
                     {
                         ...values
                     },    
             )
             console.log(loggedIn.data)
-            let user = await axios.get(`http://localhost:3001/users/${values.username}`)
+            let user = await axios.get(`${baseURL}users/${values.username}`)
             console.log(user.data.user.id)
             setUser({username: values.username,
                 id: user.data.user.id,

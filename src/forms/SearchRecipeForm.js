@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useFormik} from 'formik';
 import searchRecipeSchema from '../schemas/searchrecipeschema';
-import axios from 'axios';
+
 import addSearchedToDB from '../helpers/addSearchResultsDB';
 import recipeAPISearch from '../helpers/searchRecipesAPI';
 const inputs = ["ingrediants"]

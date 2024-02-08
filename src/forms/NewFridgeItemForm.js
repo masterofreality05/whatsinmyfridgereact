@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import {useFormik} from 'formik';
 import userIngrediantSchema from '../schemas/useringrediantschema';
 import axios from 'axios';
+import { baseURL } from '../helpers/config';
 const inputs = ["ingrediants"]
 const initalializers =  {
     ingrediants:"",
@@ -20,7 +21,7 @@ function NewFridgeItemForm({u, setFridgeItems}){
         } else {
             setFailedValidation(false)
             await axios.post(
-                'http://localhost:3001/users/adduseringrediant'
+                `${baseURL}users/adduseringrediant`
                 ,  
                     {
                         ...values,
