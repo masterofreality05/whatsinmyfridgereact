@@ -13,7 +13,7 @@ const Profile = () => {
         async function getUser(){
             if(user !== null){
                 const config = { headers: { Authorization: `Bearer ${user.token}`}};
-                let res = await axios.get(`${baseURL}/users/${user.username}`, config)
+                let res = await axios.get(`${baseURL}users/${user.username}`, config)
                 setUserData(res.data.user)
             }
         }
