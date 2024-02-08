@@ -8,7 +8,6 @@ import RecipePage from './RecipePage';
 import Profile from './Profile';
 import AppContext from './AppContext';
 import { useEffect, useState } from 'react';
-import useToggle from './helpers/useToggle';
 import BrowseIngrediants from './BrowseIngediants';
 import Logout from './Logout';
 import "./fonts/AmaticSC-Regular.ttf"

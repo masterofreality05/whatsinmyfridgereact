@@ -5,6 +5,7 @@ import SavedRecipeItem from "./SavedRecipe"
 import AppContext from "./AppContext"
 import "./RecipePage.css"
 import axios from "axios"
+import { baseURL } from "./helpers/config"
 
 const RecipePage = () => {
     let {user} = useContext(AppContext)
@@ -23,7 +24,7 @@ const RecipePage = () => {
 
     useEffect(() => {
         async function getRecipes(){
-          let recipes = await axios.get("http://localhost:3001/recipes")
+          let recipes = await axios.get(`${baseURL}recipes`)
           setRecipesInDb(recipes.data)
     }
     getRecipes()} 

@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 const recipeAPISearch = async (ingrediants) => {
   var params = new URLSearchParams();
   console.log("inside our recipe api search, ingrediants are", ingrediants)

@@ -3,6 +3,7 @@ import removeFridgeIngrediant from "./helpers/removeFridgeItem"
 import axios from "axios"
 import { useContext} from "react"
 import UserContext from "./UserContext"
+import { baseURL } from "./helpers/config"
 
 const IngrediantListItem = ({i, u}) => {
     const {setFridgeItems} = useContext(UserContext)
@@ -12,7 +13,7 @@ const IngrediantListItem = ({i, u}) => {
     }
     const handleAdd = async(ingrediants, userID) => {
         await axios.post(
-            'http://localhost:3001/users/adduseringrediant'
+            `${baseURL}adduseringrediant`
             ,  
                 {
                     ingrediants,

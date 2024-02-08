@@ -1,7 +1,8 @@
     import axios from "axios"
-    const baseUrl = "http://localhost:3001/"
+    import { baseURL } from "./config"
+
     const addSearchedToDB = async(recipeData) => {
-       await axios.post(`${baseUrl}recipes/add`, recipeData
+       await axios.post(`${baseURL}recipes/add`, recipeData
         )
     }
     

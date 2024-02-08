@@ -3,6 +3,7 @@ import axios from "axios";
 import AppContext from "./AppContext";
 import ProfileDetail from "./ProfileDetail";
 import UserContext from "./UserContext";
+import { baseURL } from "./helpers/config";
 
 const Profile = () => {
     let {user} = useContext(AppContext)
@@ -12,7 +13,7 @@ const Profile = () => {
         async function getUser(){
             if(user !== null){
                 const config = { headers: { Authorization: `Bearer ${user.token}`}};
-                let res = await axios.get(`http://localhost:3001/users/${user.username}`, config)
+                let res = await axios.get(`${baseURL}${user.username}`, config)
                 setUserData(res.data.user)
             }
         }

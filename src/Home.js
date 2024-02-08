@@ -4,6 +4,7 @@ import RecipeList from "./RecipeList"
 import { useState, useContext } from "react"
 import AppContext from "./AppContext"
 
+
 const Home = () => {
    let [searchedRecipes, setSearchedRecipes] = useState(null)
    let {user} = useContext(AppContext)

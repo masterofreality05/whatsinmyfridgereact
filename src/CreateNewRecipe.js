@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {useFormik} from 'formik';
 import axios from 'axios';
 import recipeSchema from './schemas/recipeSchema';
+import { baseURL } from './helpers/config';
 
 const initalializers =  {
     title:"",
@@ -19,7 +20,7 @@ function NewRecipeForm(props){
         } else {
             setFailedValidation(false)
             await axios.post(
-                'http://localhost:3001/recipes/add'
+                `${baseURL}recipes/add`
                 ,
                     {
                         ...values

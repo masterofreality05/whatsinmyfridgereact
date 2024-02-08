@@ -3,6 +3,7 @@ import IngrediantListItem from "./IngrediantListItem";
 import axios from "axios";
 import AppContext from "./AppContext";
 import UserContext from "./UserContext";
+import { baseURL } from "./helpers/config";
 
 const BrowseIngrediants = () => {
     const [allIngrediants, setAllIngrediants] = useState([])
@@ -11,7 +12,7 @@ const BrowseIngrediants = () => {
     const [userData, setUserData] = useState(null)
     useEffect(() => {
         async function getAllIngrediants()  {
-            let results = await axios.get("http://localhost:3001/ingrediants/")
+            let results = await axios.get(`${baseURL}ingrediants/`)
             let IngrediantList = []
             for(let row of results.data){
                 IngrediantList.push([ row.item_name, row.id])
@@ -23,7 +24,7 @@ const BrowseIngrediants = () => {
             async function getUser(){
                 if(user !== null){
                     const config = { headers: { Authorization: `Bearer ${user.token}`}};
-                    let res = await axios.get(`http://localhost:3001/users/${user.username}`, config)
+                    let res = await axios.get(`${baseURL}${user.username}`, config)
                     setUserData(res.data.user)
                 } else {
                     setUserData({ingrediants: []})
