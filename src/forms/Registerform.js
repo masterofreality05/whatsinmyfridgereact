@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import {useFormik} from 'formik';
 import basicRegisterSchema from '../schemas/registerschema';
 import axios from 'axios';
+import { baseURL } from '../helpers/config';
 import AppContext from '../AppContext';
 import '../App.css';
 
@@ -27,7 +28,7 @@ function RegisterForm(props){
         } else {
             setFailedValidation(false)
             let newUser = await axios.post(
-                'http://localhost:3001/auth/register'
+                `${baseURL}auth/register`
                 ,
                     {...values},
             )
