@@ -4,7 +4,7 @@ import axios from "axios";
 import AppContext from "./AppContext";
 import UserContext from "./UserContext";
 import { baseURL } from "./helpers/config";
-import { alphabet, alphabetize } from "./helpers/Alphabet";
+import { alphabet, alphabetizeIngrediant } from "./helpers/Alphabet";
 
 
 
@@ -42,7 +42,7 @@ const BrowseIngrediants = () => {
     return(
         <>
             {alphabet.map(a =>
-            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetize(allIngrediants,a))}}>{a}</button></li>)}
+            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetizeIngrediant(allIngrediants,a))}}>{a}</button></li>)}
           <ul className="list-group">
         <UserContext.Provider value={{userData, setFridgeItems}}>
         {allIngrediants.map(i => 
