@@ -7,18 +7,13 @@ const addRecipeFavourite = async(recipe, userID) => {
     if(recipe.label){
         let recipeInDB = await axios.get(`${baseURL}recipes/${recipe.label}`)
         recipe = recipeInDB.data.id  
-    } /*else {
-        recipe = recipe.id
-    }*/
+    } 
     if(userID.id === undefined){
         let user = await axios.get(`${baseURL}users/${userID.user.username}`)
         userID = user.data.user.id
     } else {
         userID = userID.id
     }
-
-    console.log("after our conditional recipe ID what actually is the recipe ID?", recipe)
-
     await axios.post(`${baseURL}users/adduserrecipe`,
     {
         recipe,
