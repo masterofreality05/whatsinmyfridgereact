@@ -5,12 +5,15 @@ import { useState, useContext } from "react";
 import RecipeList from "./RecipeList";
 import IngrediantListItem from "./IngrediantListItem";
 import UserContext from "./UserContext";
+import handleFridgeSearch from "./helpers/handleFridgeSearch";
 
 const ProfileDetail = ({u}) => {
     const {userData, setFridgeItems} = useContext(UserContext)
     const [searchedRecipes, setSearchedRecipes] = useState(null)
     const [ingrediants, setIngrediants] = useState(u.ingrediants)
-    const handleFridgeSearch = async() => {
+
+    /*
+    const handleFridgeSearch = async(u, setSearchedRecipes, recipeAPISearch) => {
         let searching = [];
         for(let i of u.ingrediants){
             searching.push(i[0])
@@ -18,7 +21,7 @@ const ProfileDetail = ({u}) => {
         const recipes = await recipeAPISearch(searching.join(" "))
         setSearchedRecipes(recipes)
     }
- 
+ */
     return(
         <>
         <p>{u.username}</p>
@@ -26,7 +29,7 @@ const ProfileDetail = ({u}) => {
         <p>{u.email}</p>
         <img className="profile-img" src={u.profile_img}></img>
         <h1 className="amatic-header">Add items to your fridge</h1>
-        <button onClick={handleFridgeSearch}>Search recipes for your ingrediants</button>
+        <button onClick={() => handleFridgeSearch(u, setSearchedRecipes, recipeAPISearch)}>Search recipes for your ingrediants</button>
         {searchedRecipes !== null?<RecipeList searchedRecipes={searchedRecipes}/>:<p>No search yet</p>} 
         <NewFridgeItemForm u={u} setFridgeItems={setFridgeItems}/> 
         <ul className="list-group">

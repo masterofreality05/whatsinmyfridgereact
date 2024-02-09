@@ -13,7 +13,6 @@ const SavedRecipeItem = ({recipeData, user}) => {
         <a href={recipeData.link}>visit this recipe</a>
         <br></br>
         {user?<button className="remove" onClick={() => {addRecipeFavourite(recipeData.id, user)}}>Add to favourites</button>:<button>Login to bookmark</button>}
-        
         </div>
         </li>
         </>

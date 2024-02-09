@@ -1,6 +1,6 @@
 
 import { useEffect,  useContext, useState } from "react"
-import NewRecipeForm from "./CreateNewRecipe"
+import NewRecipeForm from "./forms/CreateNewRecipeForm"
 import SavedRecipeItem from "./SavedRecipe"
 import AppContext from "./AppContext"
 import "./RecipePage.css"
@@ -14,14 +14,9 @@ const RecipePage = () => {
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
     const alphabetize = (array, letter) => {
-        console.log(array, letter)
-     
         setRecipesInDb(array.filter((recipe) => recipe.label[0] === letter))
-
-
     }
    
-
     useEffect(() => {
         async function getRecipes(){
           let recipes = await axios.get(`${baseURL}recipes`)

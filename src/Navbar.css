@@ -2,18 +2,12 @@
     font-family: "Amatic";
     font-weight: bold;
     margin-right: 20px;
-    margin-left: 20px;
-
-   
+    margin-left: 20px; 
 }
 
 .navlink-amatic:hover {
     font-size: 2em;
     transition: 0.5s;
-   
-    
-   
-   
 }
 
 .centre {

@@ -10,6 +10,11 @@ const BrowseIngrediants = () => {
     let {user} = useContext(AppContext)
     let [fridgeItems, setFridgeItems] = useState()
     const [userData, setUserData] = useState(null)
+
+    /**To gather all ingrediants stored in the database
+     * To find logged in user and process add/remove button of each ingrediant
+     * Based on the ingrediants data of logged in user
+     */
     useEffect(() => {
         async function getAllIngrediants()  {
             let results = await axios.get(`${baseURL}ingrediants/`)

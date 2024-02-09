@@ -1,6 +1,6 @@
 
 import {useContext} from "react"
-import NewRecipeForm from "./CreateNewRecipe"
+import NewRecipeForm from "./forms/CreateNewRecipeForm"
 import RecipeListItem from "./RecipeListItem"
 import appContext from "./AppContext"
 

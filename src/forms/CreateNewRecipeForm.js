@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {useFormik} from 'formik';
 import axios from 'axios';
-import recipeSchema from './schemas/recipeSchema';
-import { baseURL } from './helpers/config';
+import recipeSchema from '../schemas/recipeSchema';
+import { baseURL } from '../helpers/config';
 
 const initalializers =  {
     title:"",
