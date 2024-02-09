@@ -9,7 +9,7 @@ const RecipeListItem = ({recipeData, user}) => {
         <>
         <li className="list-item">
         <div className="recipe-list-item">
-        <h1>{recipeData.label}</h1>
+        <h1 className="">{recipeData.label}</h1>
         <img src={r.image}></img>
         <br></br>
         <a href={r.url}>visit this recipe</a>

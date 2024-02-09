@@ -30,8 +30,7 @@ const IngrediantListItem = ({i, u}) => {
     let remove = <li className="list-group-item amatic ingrediant-item">{i[0]}<button type="button" className="btn-close btn-margin" aria-label="Close" onClick={() => handleDelete(i[1], u.id)}></button></li>
     let add = <li className="list-group-item amatic ingrediant-item">{i[0]}<button type="button" className="btn-success btn-margin" aria-label="Close" onClick={() => {handleAdd(i[0], u.id)}}>Add to Fridge</button></li>
     return(
-        <>
-        
+        <>  
         {userHas? remove: add}
         </>
     )

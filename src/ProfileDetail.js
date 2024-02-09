@@ -12,16 +12,6 @@ const ProfileDetail = ({u}) => {
     const [searchedRecipes, setSearchedRecipes] = useState(null)
     const [ingrediants, setIngrediants] = useState(u.ingrediants)
 
-    /*
-    const handleFridgeSearch = async(u, setSearchedRecipes, recipeAPISearch) => {
-        let searching = [];
-        for(let i of u.ingrediants){
-            searching.push(i[0])
-        }
-        const recipes = await recipeAPISearch(searching.join(" "))
-        setSearchedRecipes(recipes)
-    }
- */
     return(
         <>
         <p>{u.username}</p>

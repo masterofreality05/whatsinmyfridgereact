@@ -1,6 +1,8 @@
 import axios from "axios";
 import { baseURL } from "./config";
 
+/**Takes recipe items and logged in user to create a relation between user and recipe
+ * Storing the recipe in the user favourites*/
 const addRecipeFavourite = async(recipe, userID) => {
     if(recipe.label){
         let recipeInDB = await axios.get(`${baseURL}recipes/${recipe.label}`)
