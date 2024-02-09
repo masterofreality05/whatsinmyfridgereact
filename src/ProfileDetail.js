@@ -27,6 +27,12 @@ const ProfileDetail = ({u}) => {
             {u.ingrediants.map(i =>
             <IngrediantListItem i={i} u={u} setIngrediants={setIngrediants}/>)}
         </ul> 
+        <h1 className="amatic-header">Favourites</h1>
+        <u className="list-group">
+            {u.recipes.map(r =>
+            <p>{r.label}</p>)}
+        
+        </ul>
         </>
     )
 }
