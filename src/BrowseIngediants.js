@@ -4,6 +4,9 @@ import axios from "axios";
 import AppContext from "./AppContext";
 import UserContext from "./UserContext";
 import { baseURL } from "./helpers/config";
+import { alphabet, alphabetize } from "./helpers/Alphabet";
+
+
 
 const BrowseIngrediants = () => {
     const [allIngrediants, setAllIngrediants] = useState([])
@@ -11,10 +14,6 @@ const BrowseIngrediants = () => {
     let [fridgeItems, setFridgeItems] = useState()
     const [userData, setUserData] = useState(null)
 
-    /**To gather all ingrediants stored in the database
-     * To find logged in user and process add/remove button of each ingrediant
-     * Based on the ingrediants data of logged in user
-     */
     useEffect(() => {
         async function getAllIngrediants()  {
             let results = await axios.get(`${baseURL}ingrediants/`)
@@ -42,6 +41,8 @@ const BrowseIngrediants = () => {
 
     return(
         <>
+            {alphabet.map(a =>
+            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetize(setAllIngrediants,a))}}>{a}</button></li>)}
           <ul className="list-group">
         <UserContext.Provider value={{userData, setFridgeItems}}>
         {allIngrediants.map(i => 
