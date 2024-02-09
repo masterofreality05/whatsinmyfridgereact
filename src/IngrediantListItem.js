@@ -39,7 +39,7 @@ const IngrediantListItem = ({i, u}) => {
     
     return(
         <>  
-        {u.id === null? button: <li className="list-group-item amatic ingrediant-item">{i[0]}<button type="button" className="btn-success btn-margin" aria-label="Close" onClick={() => {}}>Login to add</button></li>}
+        {u.id? button: <li className="list-group-item amatic ingrediant-item">{i[0]}<button type="button" className="btn-success btn-margin" aria-label="Close" onClick={() => {}}>Login to add</button></li>}
 
         </>
     )
