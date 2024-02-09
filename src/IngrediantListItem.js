@@ -22,6 +22,7 @@ const IngrediantListItem = ({i, u}) => {
         )  
         setFridgeItems(u.ingrediants)
     }
+
     let ingrediantList = [];
     for(let i of u.ingrediants){
         ingrediantList.push(i[0])
@@ -37,7 +38,7 @@ const IngrediantListItem = ({i, u}) => {
     
     return(
         <>  
-        {user !== null? userhas: <button>Log in to add to your fridge</button>}
+        {u !== null? userhas: <button>Log in to add to your fridge</button>}
 
         </>
     )
