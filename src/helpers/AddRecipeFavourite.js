@@ -17,6 +17,8 @@ const addRecipeFavourite = async(recipe, userID) => {
         userID = userID.id
     }
 
+    console.log("after our conditional recipe ID what actually is the recipe ID?", recipe)
+
     await axios.post(`${baseURL}users/adduserrecipe`,
     {
         recipe,
