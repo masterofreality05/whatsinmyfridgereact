@@ -11,6 +11,7 @@ const ProfileDetail = ({u}) => {
     const {userData, setFridgeItems} = useContext(UserContext)
     const [searchedRecipes, setSearchedRecipes] = useState(null)
     const [ingrediants, setIngrediants] = useState(u.ingrediants)
+    console.log("here our saved recipes", u.recipes)
 
     return(
         <>

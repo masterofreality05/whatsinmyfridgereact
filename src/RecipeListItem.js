@@ -4,7 +4,6 @@ import addRecipeFavourite from "./helpers/AddRecipeFavourite";
 
 const RecipeListItem = ({recipeData, user}) => {
     let r = recipeData.recipe;
-    console.log("heres our list item", user)
     return(
         <>
         <li className="list-item">
