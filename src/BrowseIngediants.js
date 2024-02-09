@@ -42,7 +42,7 @@ const BrowseIngrediants = () => {
     return(
         <>
             {alphabet.map(a =>
-            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetize(setAllIngrediants,a))}}>{a}</button></li>)}
+            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetize(allIngrediants,a))}}>{a}</button></li>)}
           <ul className="list-group">
         <UserContext.Provider value={{userData, setFridgeItems}}>
         {allIngrediants.map(i => 
