@@ -6,8 +6,12 @@ https://whats-in-my-fridge-react-app.onrender.com/
 -Describe what your website does
 My website allows users to create an inventory of their ingrediants that they own, and search for recipes which will match these, users can bookmark all kinds of recipes and create custom cookbooks that dynamically update when their ingrediant list is updated. 
 
+
 -List the features you implemented and explain why you chose those
-features to implement
+I implemented a full CRUD functional backend server using Node Express.
+This allows get, post put and patch requests to update our postgres data. 
+Our front-end react access the backend using axios.
+For the user exerience, features include dynamic igrediant storage, dynamically populated recipe searches and reccommendations and bookmarking capabilities. 
 
 -Where your tests are and how to run them
 My React tests are ran via jest and are located in src/tests.
@@ -29,9 +33,7 @@ Registering is achieved by filling out a react form, provided by Formik, and res
 
 Logging in is also achieved through a react form and returns a token and updates the application wide (by means of context providing) user state to null, before navigating (redirecting) back to the home page.
 
-f. Keep the API in there, and if you have anything to say about the API then
-add some notes. If you have created your own API, please document the
-process.
+
 -Identify the technology stack used to create your website
 The technology stack used in this application is a combination of a React app which dynamically creates the front-end interface, while Node Express app creates a CRUD functional back-end server, which is primarily responsible for communicating to the postgres database. 
 

@@ -14,7 +14,7 @@ const IngrediantListItem = ({i, u}) => {
     }
     const handleAdd = async(ingrediants, userID) => {
         await axios.post(
-            `${baseURL}adduseringrediant`
+            `${baseURL}users/adduseringrediant`
             ,  
                 {
                     ingrediants,
