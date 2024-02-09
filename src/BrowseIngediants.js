@@ -14,6 +14,8 @@ const BrowseIngrediants = () => {
     let [fridgeItems, setFridgeItems] = useState()
     const [userData, setUserData] = useState(null)
 
+    console.log(allIngrediants)
+
     useEffect(() => {
         async function getAllIngrediants()  {
             let results = await axios.get(`${baseURL}ingrediants/`)
