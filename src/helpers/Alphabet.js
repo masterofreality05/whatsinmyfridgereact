@@ -5,7 +5,7 @@ const alphabetize = (array, letter) => {
 }
 
 const alphabetizeIngrediant = (array, letter) => {
-    return array.filter((ingrediant) => ingrediant.item_name[0] === letter)
+    return array.filter((ingrediant) => ingrediant[0][0] === letter)
 }
 
 export {alphabet, alphabetize, alphabetizeIngrediant}
