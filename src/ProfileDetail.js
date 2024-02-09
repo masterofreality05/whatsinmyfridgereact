@@ -6,6 +6,7 @@ import RecipeList from "./RecipeList";
 import IngrediantListItem from "./IngrediantListItem";
 import UserContext from "./UserContext";
 import handleFridgeSearch from "./helpers/handleFridgeSearch";
+import SavedRecipeItem from "./SavedRecipe";
 
 const ProfileDetail = ({u}) => {
     const {userData, setFridgeItems} = useContext(UserContext)
@@ -30,7 +31,9 @@ const ProfileDetail = ({u}) => {
         <h1 className="amatic-header">Favourites</h1>
         <ul className="list-group">
             {u.recipes.map(r =>
-            <p>{r.label}</p>)}
+            <SavedRecipeItem recipeData={r} user={u}/>) 
+}
+
         
         </ul>
         </>
