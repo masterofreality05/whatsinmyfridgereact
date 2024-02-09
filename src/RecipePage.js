@@ -6,17 +6,12 @@ import AppContext from "./AppContext"
 import "./RecipePage.css"
 import axios from "axios"
 import { baseURL } from "./helpers/config"
+import { alphabet,  alphabetize } from "./helpers/Alphabet"
 
 const RecipePage = () => {
     let {user} = useContext(AppContext)
     let [recipesInDB, setRecipesInDb] = useState([])
-    console.log(recipesInDB)
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
-    const alphabetize = (array, letter) => {
-        setRecipesInDb(array.filter((recipe) => recipe.label[0] === letter))
-    }
-   
     useEffect(() => {
         async function getRecipes(){
           let recipes = await axios.get(`${baseURL}recipes`)
@@ -28,7 +23,7 @@ const RecipePage = () => {
     return(
         <>
         {alphabet.map(a =>
-            <li className="alphabet-letter"><button onClick={() => {alphabetize(recipesInDB,a)}}>{a}</button></li>)}
+            <li className="alphabet-letter"><button onClick={() => {setRecipesInDb(alphabetize(recipesInDB,a))}}>{a}</button></li>)}
           <ul>
           {recipesInDB.map(r => 
           <li className="saved-recipe"><SavedRecipeItem recipeData={r} user={user}/></li>
