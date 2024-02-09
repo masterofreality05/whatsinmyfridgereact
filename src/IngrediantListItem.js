@@ -6,6 +6,7 @@ import UserContext from "./UserContext"
 import { baseURL } from "./helpers/config"
 
 const IngrediantListItem = ({i, u}) => {
+    console.log(u)
     const {setFridgeItems} = useContext(UserContext)
     const handleDelete = (i, u) => {
         removeFridgeIngrediant(i, u)
@@ -38,7 +39,7 @@ const IngrediantListItem = ({i, u}) => {
     
     return(
         <>  
-        {u.id === null? button: <p>Log in to add to your fridge</p>}
+        {u.id === null? button: <li className="list-group-item amatic ingrediant-item">{i[0]}<button type="button" className="btn-success btn-margin" aria-label="Close" onClick={() => {}}>Login to add</button></li>}
 
         </>
     )
