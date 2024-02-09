@@ -38,7 +38,7 @@ const IngrediantListItem = ({i, u}) => {
     
     return(
         <>  
-        {u.id !== null? button: <p>Log in to add to your fridge</p>}
+        {u.id === null? button: <p>Log in to add to your fridge</p>}
 
         </>
     )
