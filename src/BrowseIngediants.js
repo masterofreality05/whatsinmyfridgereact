@@ -10,6 +10,8 @@ import { alphabet, alphabetizeIngrediant } from "./helpers/Alphabet";
 
 const BrowseIngrediants = () => {
     const [allIngrediants, setAllIngrediants] = useState([])
+    //used to keep the original full list in which we will retain. 
+    const [allIngrediantsCopy, setAllIngrediantsCopy] = useState([])
     let {user} = useContext(AppContext)
     let [fridgeItems, setFridgeItems] = useState()
     const [userData, setUserData] = useState(null)
@@ -43,7 +45,7 @@ const BrowseIngrediants = () => {
     return(
         <>
             {alphabet.map(a =>
-            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetizeIngrediant(allIngrediants,a))}}>{a}</button></li>)}
+            <li className="alphabet-letter"><button onClick={() => {setAllIngrediants(alphabetizeIngrediant(allIngrediantsCopy,a))}}>{a}</button></li>)}
           <ul className="list-group">
         <UserContext.Provider value={{userData, setFridgeItems}}>
         {allIngrediants.map(i => 
