@@ -14,6 +14,8 @@ const ProfileDetail = ({u}) => {
     const [ingrediants, setIngrediants] = useState(u.ingrediants)
     console.log("here our saved recipes", u.recipes)
 
+    
+
     return(
         <>
         <p>{u.username}</p>

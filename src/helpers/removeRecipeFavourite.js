@@ -12,7 +12,7 @@ const removeRecipeFavourite = async(recipe, userID) => {
     } else {
         userID = userID.id
     }
-   let deleted = await axios.post(`${baseURL}users/removerrecipe`,
+   let deleted = await axios.post(`${baseURL}users/removerecipe`,
     {
         recipe,
         userID
