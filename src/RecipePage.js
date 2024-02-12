@@ -31,7 +31,7 @@ const RecipePage = () => {
           <li className="saved-recipe"><SavedRecipeItem recipeData={r} user={user}/></li>
             )} 
          </ul> 
-         {!user === null?<NewRecipeForm/>:<p>You must be logged in to create a new recipe</p> }
+         {!user === null?<NewRecipeForm/>:<p>You must be logged in to view saved recipes</p> }
         </>
     )
 }
