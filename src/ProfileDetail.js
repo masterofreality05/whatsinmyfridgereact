@@ -31,10 +31,9 @@ const ProfileDetail = ({u}) => {
         <h1 className="amatic-header">Favourites</h1>
         <ul className="list-group">
             {u.recipes.map(r =>
-            <SavedRecipeItem recipeData={r} user={u}/>) 
+            <SavedRecipeItem recipeData={r} user={u} fav={true}/>) 
 }
-
-        
+   
         </ul>
         </>
     )

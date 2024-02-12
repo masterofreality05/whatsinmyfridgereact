@@ -2,7 +2,16 @@
 import "./RecipeListItem.css"
 import addRecipeFavourite from "./helpers/AddRecipeFavourite";
 
-const SavedRecipeItem = ({recipeData, user}) => {  
+const SavedRecipeItem = ({recipeData, user, fav}) => {  
+    let button;
+
+    if(fav === true){
+        button =  <button className="remove" onClick={() => {addRecipeFavourite(recipeData.id, user)}}>Remove from favorites</button>
+    } else {
+        <button className="remove" onClick={() => {addRecipeFavourite(recipeData.id, user)}}>Add to favourites</button>
+    }
+   
+   
     return(
         <>
         <li>
@@ -12,7 +21,7 @@ const SavedRecipeItem = ({recipeData, user}) => {
         <br></br>
         <a href={recipeData.link}>visit this recipe</a>
         <br></br>
-        {user?<button className="remove" onClick={() => {addRecipeFavourite(recipeData.id, user)}}>Add to favourites</button>:<button>Login to bookmark</button>}
+        {user?button:<button>Login to bookmark</button>}
         </div>
         </li>
         </>
