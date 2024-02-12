@@ -27,6 +27,7 @@ const BrowseIngrediants = () => {
             if(user !== null) {
                 getUser(user, setUserData)}
             setAllIngrediants(IngrediantList)
+            setAllIngrediantsCopy(IngrediantList)
         } 
             async function getUser(){
                 if(user !== null){
