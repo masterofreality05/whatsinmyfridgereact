@@ -11,11 +11,13 @@ import { alphabet,  alphabetize } from "./helpers/Alphabet"
 const RecipePage = () => {
     let {user} = useContext(AppContext)
     let [recipesInDB, setRecipesInDb] = useState([])
+    let [recipesInDBCopy, setrecipesInDBCopy] = useState([])
 
     useEffect(() => {
         async function getRecipes(){
           let recipes = await axios.get(`${baseURL}recipes`)
           setRecipesInDb(recipes.data)
+          setrecipesInDBCopy(recipes.data)
     }
     getRecipes()} 
     ,[])
@@ -23,7 +25,7 @@ const RecipePage = () => {
     return(
         <>
         {alphabet.map(a =>
-            <li className="alphabet-letter"><button onClick={() => {setRecipesInDb(alphabetize(recipesInDB,a))}}>{a}</button></li>)}
+            <li className="alphabet-letter"><button onClick={() => {setRecipesInDb(alphabetize(recipesInDBCopy,a))}}>{a}</button></li>)}
           <ul>
           {recipesInDB.map(r => 
           <li className="saved-recipe"><SavedRecipeItem recipeData={r} user={user}/></li>
