@@ -6,7 +6,6 @@ import UserContext from "./UserContext"
 import { baseURL } from "./helpers/config"
 
 const IngrediantListItem = ({i, u}) => {
-    console.log(u)
     const {setFridgeItems} = useContext(UserContext)
     const handleDelete = (i, u) => {
         removeFridgeIngrediant(i, u)
